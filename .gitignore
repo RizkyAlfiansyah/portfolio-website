@@ -1,0 +1,41 @@
+# dependencies
+node_modules/
+
+# next.js build
+.next/
+out/
+
+# production
+build/
+
+# misc
+.DS_Store
+
+# local env files
+.env
+.env.local
+.env.*.local
+
+# logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# vercel
+.vercel/
+
+# editors
+.vscode/
+.idea/
+
+# cache
+.cache/
+coverage/
+
+# next-env.d.ts
+next-env.d.ts
+
+# package-lock.json
+package-lock.json

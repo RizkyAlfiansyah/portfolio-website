@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+:root.dark {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  @apply bg-base-light text-ink-light font-body antialiased;
+  background-image: theme("backgroundImage.radial-spot"), theme("backgroundImage.grain");
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+.dark body {
+  @apply bg-base-dark text-ink-dark;
+  background-image: theme("backgroundImage.radial-spot"), theme("backgroundImage.grain");
+}
+
+::selection {
+  background: rgba(15, 118, 110, 0.25);
+}
+
+.section-grid {
+  @apply grid gap-8 lg:grid-cols-[280px_1fr];
+}
+
+.card {
+  @apply rounded-2xl border border-line-light bg-white/70 p-6 shadow-sm backdrop-blur;
+}
+
+.dark .card {
+  @apply border-line-dark bg-[#111413]/70 shadow-none;
+}
+
+.badge {
+  @apply inline-flex items-center gap-2 rounded-full border border-ink-light/25 bg-white/50 px-3 py-1 text-xs uppercase tracking-[0.22em] text-muted-light;
+}
+
+.dark .badge {
+  @apply border-ink-dark/25 bg-[#111413]/60 text-muted-dark;
+}
+
+.link {
+  @apply inline-flex items-center gap-2 text-sm font-medium text-accent-light transition;
+}
+
+.dark .link {
+  @apply text-accent-dark;
+}
+
+.link:hover {
+  @apply opacity-80;
+}
+
+.typing {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 1px solid currentColor;
+  width: var(--typing-width, 28ch);
+  animation: typing var(--typing-duration, 2200ms) steps(var(--typing-steps, 28), end) forwards,
+    caret-hide var(--typing-duration, 2200ms) linear forwards;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--typing-width, 28ch);
+  }
+}
+
+@keyframes caret-hide {
+  0%,
+  90% {
+    border-color: currentColor;
+  }
+  100% {
+    border-color: transparent;
+  }
+}
+
+.morph-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.morph-layer {
+  position: absolute;
+  inset: 0;
+  transition: opacity 0.65s ease-in-out, filter 0.65s ease-in-out, transform 0.65s ease-in-out;
+  will-change: opacity, filter, transform;
+  backface-visibility: hidden;
+  transform-origin: 50% 50%;
+}
+
+.morph-in {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+.morph-out {
+  opacity: 0;
+  filter: blur(6px);
+  transform: translateY(-6px);
+}
