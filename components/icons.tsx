@@ -242,6 +242,74 @@ export function IconFirebase({ className }: IconProps) {
   );
 }
 
+export function IconLinkedIn({ className }: IconProps) {
+  return (
+    <svg className={className} preserveAspectRatio="xMidYMid" viewBox="0 0 256 256" aria-hidden>
+      <path d="M218.123 218.127h-37.931v-59.403c0-14.165-.253-32.4-19.728-32.4-19.756 0-22.779 15.434-22.779 31.369v60.43h-37.93V95.967h36.413v16.694h.51a39.907 39.907 0 0 1 35.928-19.733c38.445 0 45.533 25.288 45.533 58.186l-.016 67.013ZM56.955 79.27c-12.157.002-22.014-9.852-22.016-22.009-.002-12.157 9.851-22.014 22.008-22.016 12.157-.003 22.014 9.851 22.016 22.008A22.013 22.013 0 0 1 56.955 79.27m18.966 138.858H37.95V95.967h37.97v122.16ZM237.033.018H18.89C8.58-.098.125 8.161-.001 18.471v219.053c.122 10.315 8.576 18.582 18.89 18.474h218.144c10.336.128 18.823-8.139 18.966-18.474V18.454c-.147-10.33-8.635-18.588-18.966-18.453" fill="currentColor" />
+    </svg>
+  );
+}
+
+export function IconMail({ className }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden>
+      <rect x="4" y="6" width="16" height="12" rx="2" />
+      <path d="m5 8 7 5 7-5" />
+    </svg>
+  );
+}
+
+export function IconPhone({ className }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden>
+      <path d="M6.6 3h2.2a1 1 0 0 1 1 .86l.5 3a1 1 0 0 1-.58 1.06l-1.6.72a11.5 11.5 0 0 0 5.84 5.84l.72-1.6a1 1 0 0 1 1.06-.58l3 .5a1 1 0 0 1 .86 1v2.2a1 1 0 0 1-1.08 1A16 16 0 0 1 5.6 4.08 1 1 0 0 1 6.6 3Z" />
+    </svg>
+  );
+}
+
+export function IconMapPin({ className }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden>
+      <path d="M12 22s6-5.6 6-11a6 6 0 1 0-12 0c0 5.4 6 11 6 11Z" />
+      <circle cx="12" cy="11" r="2.5" />
+    </svg>
+  );
+}
+
+export function IconLinkedInSimple({ className }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" aria-hidden fill="currentColor">
+      <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.24 22.5h4.52V7.98H.24V22.5zM8.76 7.98h4.33v1.98h.06c.6-1.14 2.07-2.34 4.27-2.34 4.57 0 5.42 3 5.42 6.9v8h-4.52v-7.1c0-1.7-.03-3.9-2.38-3.9-2.38 0-2.75 1.86-2.75 3.78v7.22H8.76V7.98z" />
+    </svg>
+  );
+}
+
+export function IconInstagram({ className }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" aria-hidden fill="none" stroke="currentColor" strokeWidth="1.5">
+      <rect x="4" y="4" width="16" height="16" rx="4" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+export function IconThreads({ className }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" aria-hidden fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path d="M12 3c-4.5 0-7 2.6-7 6.7 0 5.1 3.8 8.3 7 8.3 3.8 0 7-3.2 7-8.3C19 5.6 16.4 3 12 3Z" />
+      <path d="M8.8 10.2c.5-1.1 1.6-1.8 3.2-1.8 2.6 0 3.4 1.8 3.4 3.7 0 2.1-1.2 3.6-3.5 3.6-2.1 0-3.3-1.4-3.3-3.5h4.8" />
+    </svg>
+  );
+}
+
+export function IconFacebook({ className }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" aria-hidden fill="currentColor">
+      <path d="M13 10h2.5l.5-3H13V5.5C13 4.7 13.3 4 14.6 4H16V1.2C15.1 1.1 14.2 1 13.3 1 10.7 1 9 2.6 9 5.2V7H6.5v3H9v10h4V10Z" />
+    </svg>
+  );
+}
 export function IconTanstackQuery({ className }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" aria-hidden>

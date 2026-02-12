@@ -9,12 +9,28 @@ import { ShineBorder } from "@/components/magicui/shine-border";
 import { Spotlight } from "@/components/magicui/spotlight";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
 import { SkillIcon } from "@/components/skill-icon";
+import {
+  IconMail,
+  IconMapPin,
+  IconPhone,
+  IconInstagram,
+  IconThreads,
+  IconFacebook,
+  IconLinkedInSimple
+} from "@/components/icons";
 
 const contact = {
   address: "Ubung Kaja, Denpasar Utara, Denpasar, Bali, Indonesia",
   phone: "+62 822-9013-9151",
   email: "rizkkyaf@gmail.com"
 };
+
+const socialLinks = [
+  { name: "Instagram", icon: IconInstagram, href: "#" },
+  { name: "Threads", icon: IconThreads, href: "#" },
+  { name: "LinkedIn", icon: IconLinkedInSimple, href: "#" },
+  { name: "Facebook", icon: IconFacebook, href: "#" }
+];
 
 const experiences = [
   {
@@ -60,7 +76,7 @@ const experiences = [
   {
     role: "Frontend Web Developer",
     company: "PT. Integrasi Inti Sinergi, Jakarta (Remote)",
-    period: "",
+    period: "April 2022 - March 2023",
     highlights: [
       "Implemented designs into working apps and reviewed them before implementation.",
       "Collaborated with backend to integrate APIs based on project documents.",
@@ -86,6 +102,7 @@ const teaching = {
 const internship = {
   role: "Software Engineer Intern",
   company: "Dinas Pendidikan Sulawesi Selatan, Makassar",
+  period: "December 2019 - January 2020",
   highlights: [
     "Designed software device solutions to solve client problems.",
     "Checked eligibility software prototypes.",
@@ -149,7 +166,11 @@ const slugs = [
   "googlemaps",
   "airtable",
   "webflow",
-  "kotlin"
+  "kotlin",
+  "instagram",
+  "threads",
+  "linkedin",
+  "facebook"
 ];
 
 const slugSet = new Set(slugs);
@@ -323,6 +344,9 @@ export default function HomePage() {
           </div>
           <div className="card space-y-4">
             <div>
+              <p className="text-sm uppercase tracking-[0.28em] text-muted-light dark:text-muted-dark">
+                {internship.period}
+              </p>
               <h4 className="font-display text-xl font-semibold">{internship.role}</h4>
               <p className="text-sm text-muted-light dark:text-muted-dark">
                 {internship.company}
@@ -377,7 +401,7 @@ export default function HomePage() {
                 {secondarySkills.map((item) => (
                   <span
                     key={item.name}
-                    className="inline-flex items-center gap-2 rounded-full border border-line-light px-3 py-1 text-xs text-muted-light dark:border-line-dark dark:text-muted-dark"
+                    className="inline-flex items-center gap-2 rounded-full border border-base-dark px-3 py-1 text-xs text-muted-light dark:border-white dark:text-muted-dark"
                   >
                     <SkillIcon
                       name={item.name}
@@ -423,13 +447,42 @@ export default function HomePage() {
                   Contact
                 </p>
                 <div className="space-y-3 text-sm">
-                  <p className="font-medium">{contact.address}</p>
-                  <p className="text-muted-light dark:text-muted-dark">{contact.phone}</p>
-                  <p>
+                  <div className="flex items-start gap-3">
+                    <IconMapPin className="mt-1 h-4 w-4" />
+                    <p className="font-medium">{contact.address}</p>
+                  </div>
+                  <div className="flex items-center gap-3 text-muted-light dark:text-muted-dark">
+                    <IconPhone className="h-4 w-4" />
+                    <p>{contact.phone}</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <IconMail className="h-4 w-4" />
                     <a className="link" href={`mailto:${contact.email}`}>
                       {contact.email}
                     </a>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <p className="text-xs uppercase tracking-[0.3em] text-muted-light dark:text-muted-dark">
+                    Social
                   </p>
+                  <div className="flex flex-wrap gap-3">
+                    {socialLinks.map((social) => (
+                      <a
+                        key={social.name}
+                        className="inline-flex items-center gap-2 rounded-full border border-base-dark px-3 py-1 text-xs text-muted-light transition hover:opacity-80 dark:border-white dark:text-muted-dark"
+                        href={social.href}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {(() => {
+                          const Icon = social.icon;
+                          return <Icon className="h-4 w-4" />;
+                        })()}
+                        {social.name}
+                      </a>
+                    ))}
+                  </div>
                 </div>
               </div>
             </ShineBorder>

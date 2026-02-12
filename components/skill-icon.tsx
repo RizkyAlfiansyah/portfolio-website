@@ -14,8 +14,15 @@ type SkillIconProps = {
 const LIGHT_COLOR = "0f172a";
 const DARK_COLOR = "e2e8f0";
 
-const iconUrl = (slug: string, isDark: boolean) =>
-  `https://cdn.simpleicons.org/${slug}/${isDark ? DARK_COLOR : LIGHT_COLOR}`;
+const BRAND_COLORS: Record<string, string> = {
+  linkedin: "0A66C2"
+};
+
+const iconUrl = (slug: string, isDark: boolean) => {
+  const slugKey = slug.toLowerCase();
+  const color = BRAND_COLORS[slugKey] ?? (isDark ? DARK_COLOR : LIGHT_COLOR);
+  return `https://cdn.simpleicons.org/${slug}/${color}`;
+};
 
 export function SkillIcon({
   name,

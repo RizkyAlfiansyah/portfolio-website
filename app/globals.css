@@ -43,11 +43,11 @@ body {
 }
 
 .badge {
-  @apply inline-flex items-center gap-2 rounded-full border border-ink-light/25 bg-white/50 px-3 py-1 text-xs uppercase tracking-[0.22em] text-muted-light;
+  @apply inline-flex items-center gap-2 rounded-full border border-ink-light bg-transparent px-3 py-1 text-xs uppercase tracking-[0.22em] text-ink-light;
 }
 
 .dark .badge {
-  @apply border-ink-dark/25 bg-[#111413]/60 text-muted-dark;
+  @apply border-ink-dark bg-transparent text-ink-dark;
 }
 
 .link {
