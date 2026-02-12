@@ -7,6 +7,11 @@ const nextConfig = {
         protocol: "https",
         hostname: "cdn.simpleicons.org",
         pathname: "/**"
+      },
+      {
+        protocol: "https",
+        hostname: "github.com",
+        pathname: "/users/**"
       }
     ]
   }

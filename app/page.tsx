@@ -9,6 +9,7 @@ import { ShineBorder } from "@/components/magicui/shine-border";
 import { Spotlight } from "@/components/magicui/spotlight";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
 import { SkillIcon } from "@/components/skill-icon";
+import { GithubActivity } from "@/components/github-activity";
 import {
   IconMail,
   IconMapPin,
@@ -432,6 +433,18 @@ export default function HomePage() {
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+
+        <section className="section-grid" id="github">
+          <div>
+            <p className="badge">GitHub</p>
+            <h3 className="mt-3 font-display text-2xl font-semibold">Recent Activity</h3>
+          </div>
+          <div className="card p-0">
+            <div className="rounded-2xl border border-line-light bg-white/5 p-4 dark:border-line-dark dark:bg-black/20">
+              <GithubActivity username="RizkyAlfiansyah" />
+            </div>
           </div>
         </section>
 
