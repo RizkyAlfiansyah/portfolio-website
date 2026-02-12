@@ -35,7 +35,7 @@ const socialLinks = [
 
 const experiences = [
   {
-    role: "Frontend Developer",
+    role: "MID - Frontend Developer",
     company: "Palm Code, Bali",
     period: "May 2023 - Present",
     highlights: [
@@ -272,7 +272,7 @@ const typingTexts = [
   "Responsive web UI"
 ];
 
-const nameMorphs = ["Rizky Alfiansyah", "Frontend Developer"];
+const nameMorphs = ["Rizky Alfiansyah (Ren)", "Frontend Developer"];
 
 export default function HomePage() {
   return (
@@ -280,7 +280,7 @@ export default function HomePage() {
       <Particles className="dark:opacity-40" />
       <Spotlight />
       <div className="mx-auto flex max-w-5xl flex-col md:gap-16 gap-6">
-        <header className="flex flex-wrap items-center justify-between gap-4">
+        <header className="flex flex-wrap items-start justify-between gap-4">
           <div>
             <h1 className="mt-4 font-display text-4xl font-semibold tracking-tight md:text-5xl">
               <MorphingText
@@ -295,14 +295,16 @@ export default function HomePage() {
               Denpasar, Bali - Available for remote collaborations
             </p>
           </div>
-          <AnimatedThemeToggle />
+          <div className="ml-auto md:static md:ml-0 fixed top-2 right-2 z-20 scale-75 sm:scale-100">
+            <AnimatedThemeToggle />
+          </div>
         </header>
 
         <section className="grid md:gap-10 gap-6 max-md:flex flex-col-reverse md:grid-cols-[1.1fr_0.9fr]">
           <BlurFade>
             <div className="space-y-6">
               <h2 className="font-display text-3xl font-semibold leading-tight md:text-4xl">
-                Building responsive, user-friendly web experiences with modern front-end stacks.
+                Thoughtfully crafted interfaces, built to perform.
               </h2>
               <p className="max-w-[90vw] overflow-hidden text-[10px] uppercase tracking-[0.12em] text-muted-light dark:text-muted-dark sm:max-w-full sm:text-sm sm:tracking-[0.35em]">
                 <TypingAnimation
