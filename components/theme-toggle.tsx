@@ -12,10 +12,12 @@ export function ThemeToggle() {
 
   useEffect(() => {
     const stored = window.localStorage.getItem(STORAGE_KEY) as ThemeMode | null;
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const nextMode = stored ?? (prefersDark ? "dark" : "light");
+    const nextMode = stored ?? "dark";
     setMode(nextMode);
     document.documentElement.classList.toggle("dark", nextMode === "dark");
+    if (!stored) {
+      window.localStorage.setItem(STORAGE_KEY, nextMode);
+    }
   }, []);
 
   const toggle = () => {

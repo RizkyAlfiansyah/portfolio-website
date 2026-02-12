@@ -3,6 +3,7 @@ import { BlurFade } from "@/components/magicui/blur-fade";
 import { AnimatedThemeToggle } from "@/components/magicui/animated-theme-toggle";
 import { IconCloudTheme } from "@/components/icon-cloud-theme";
 import { MorphingText } from "@/components/magicui/morphing-text";
+import { MorphingImage } from "@/components/magicui/morphing-image";
 import { Particles } from "@/components/magicui/particles";
 import { ShineBorder } from "@/components/magicui/shine-border";
 import { Spotlight } from "@/components/magicui/spotlight";
@@ -197,7 +198,7 @@ export default function HomePage() {
     <main className="relative min-h-screen overflow-x-hidden px-6 pb-24 pt-10 lg:px-16">
       <Particles className="dark:opacity-40" />
       <Spotlight />
-      <div className="mx-auto flex max-w-5xl flex-col gap-16">
+      <div className="mx-auto flex max-w-5xl flex-col md:gap-16 gap-6">
         <header className="flex flex-wrap items-center justify-between gap-4">
           <div>
             <h1 className="mt-4 font-display text-4xl font-semibold tracking-tight md:text-5xl">
@@ -216,7 +217,7 @@ export default function HomePage() {
           <AnimatedThemeToggle />
         </header>
 
-        <section className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+        <section className="grid md:gap-10 gap-6 max-md:flex flex-col-reverse md:grid-cols-[1.1fr_0.9fr]">
           <BlurFade>
             <div className="space-y-6">
               <h2 className="font-display text-3xl font-semibold leading-tight md:text-4xl">
@@ -247,15 +248,12 @@ export default function HomePage() {
           </BlurFade>
 
           <BlurFade delay={120}>
-            <div className="relative">
+            <div className="relative max-lg:max-w-sm mx-auto">
               <div className="absolute -inset-6 rounded-[32px] bg-gradient-to-br from-accent-light/15 via-transparent to-accent-light/10 blur-3xl dark:from-accent-dark/10 dark:to-accent-dark/10" />
-              <div className="relative overflow-hidden rounded-[32px] border border-line-light bg-white/60 p-6 shadow-glow dark:border-line-dark dark:bg-[#101312]/80">
-                <Image
-                  src="/hero-portrait.svg"
-                  alt="Rizky Alfiansyah portrait illustration"
-                  width={520}
-                  height={640}
-                  className="h-auto w-full object-cover"
+              <div className="relative overflow-hidden aspect-[520/640] rounded-[32px] shadow-glow">
+                <MorphingImage
+                  sources={["/hero-portraits.png", "/hero-portraits-illustrations.png"]}
+                  alt="Rizky Alfiansyah portrait"
                 />
               </div>
             </div>
