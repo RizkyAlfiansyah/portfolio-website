@@ -35,11 +35,11 @@ body {
 }
 
 .card {
-  @apply rounded-2xl border border-line-light bg-white/70 p-6 shadow-sm backdrop-blur;
+  @apply rounded-2xl border border-line-light bg-white/70 p-4 md:p-6 shadow-sm backdrop-blur;
 }
 
 .dark .card {
-  @apply border-line-dark bg-[#111413]/70 shadow-none;
+  @apply border-line-dark bg-[#111413]/70 p-4 md:p-6 shadow-none;
 }
 
 .badge {

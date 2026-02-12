@@ -122,9 +122,54 @@ const education = [
 
 const projects = [
   {
-    name: "Portfolio",
-    description: "Personal portfolio showcasing responsive UI and frontend craft."
+    name: "ERP Inventory System",
+    company: "Accelego Kreasi Digital",
+    description: "Built ERP inventory flows with responsive UI and data management dashboards.",
+    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80",
+    url: "#"
+  },
+  {
+    name: "Real Estate Platform",
+    company: "Airestate",
+    description: "Full-stack property search experience integrating maps, listings, and booking flows.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80",
+    url: "#"
+  },
+  {
+    name: "Personal Portfolio",
+    company: "Self",
+    description: "Showcase site highlighting selected work and contact details.",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80",
+    url: "#"
+  },
+  {
+    name: "AI Content Dashboard",
+    company: "Palm Code",
+    description: "Analytics dashboard for AI-powered content performance with charting and filters.",
+    image: "https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=900&q=80",
+    url: "#"
+  },
+  {
+    name: "Learning Management",
+    company: "Dinas Pendidikan",
+    description: "Learning portal with progress tracking and responsive course layouts.",
+    image: "https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&w=900&q=80",
+    url: "#"
+  },
+  {
+    name: "Marketing Landing Suite",
+    company: "Freelance",
+    description: "Collection of optimized landing pages with A/B test variants and CMS integration.",
+    image: "https://images.unsplash.com/photo-1523475472560-7f55c0c154b4?auto=format&fit=crop&w=900&q=80",
+    url: "#"
   }
+];
+
+const workImages = [
+  "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80",
+  "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80",
+  "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80",
+  "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80"
 ];
 
 const slugs = [
@@ -171,7 +216,14 @@ const slugs = [
   "instagram",
   "threads",
   "linkedin",
-  "facebook"
+  "facebook",
+  "claude",
+  "googlegemini",
+  "cursor",
+  "antigravity",
+  "opencode",
+  "trae",
+  "coolify"
 ];
 
 const slugSet = new Set(slugs);
@@ -196,7 +248,14 @@ const secondarySkills = [
   { name: "Airtable API", slug: "airtable" },
   { name: "Webflow Components", slug: "webflow" },
   { name: "Kotlin", slug: "kotlin" },
-  { name: "Firebase", slug: "firebase" }
+  { name: "Firebase", slug: "firebase" },
+  { name: "Claude AI", slug: "calude" },
+  { name: "Gemini", slug: "googlegemini" },
+  { name: "Cursor", slug: "cursor" },
+  { name: "Antigravity", slug: null },
+  { name: "Opencode", slug: null },
+  { name: "Trae", slug: null },
+  { name: "Coolify", slug: "coolify" }
 ].map((item) => (item.slug && !slugSet.has(item.slug) ? { ...item, slug: null } : item));
 
 const iconCloudSlugs = Array.from(
@@ -424,14 +483,36 @@ export default function HomePage() {
             <p className="badge">Projects</p>
             <h3 className="mt-3 font-display text-2xl font-semibold">Selected Work</h3>
           </div>
-          <div className="space-y-4">
-            {projects.map((project) => (
-              <div key={project.name} className="card flex flex-wrap items-center justify-between gap-3">
-                <div>
-                  <h4 className="font-display text-xl font-semibold">{project.name}</h4>
-                  <p className="text-sm text-muted-light dark:text-muted-dark">{project.description}</p>
-                </div>
-              </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {projects.map((project, idx) => (
+              <BlurFade key={project.name} delay={idx * 60}>
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="card block h-full space-y-3 transition hover:-translate-y-1 hover:shadow-glow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-light dark:focus-visible:outline-accent-dark"
+                >
+                  <div className="overflow-hidden rounded-xl border border-line-light dark:border-line-dark">
+                    <Image
+                      src={project.image}
+                      alt={project.name}
+                      width={900}
+                      height={600}
+                      className="h-44 w-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="flex flex-col items-start justify-between gap-3">
+                    <span className="rounded-full border border-base-dark px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-muted-light dark:border-white dark:text-muted-dark">
+                      {project.company}
+                    </span>
+                    <div>
+                      <h4 className="font-display text-lg font-semibold">{project.name}</h4>
+                      <p className="text-sm text-muted-light dark:text-muted-dark">{project.description}</p>
+                    </div>
+                  </div>
+                </a>
+              </BlurFade>
             ))}
           </div>
         </section>
