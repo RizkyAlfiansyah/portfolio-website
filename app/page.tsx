@@ -442,9 +442,7 @@ export default function HomePage() {
             <h3 className="mt-3 font-display text-2xl font-semibold">Recent Activity</h3>
           </div>
           <div className="card p-0">
-            <div className="rounded-2xl border border-line-light bg-white/5 p-4 dark:border-line-dark dark:bg-black/20">
-              <GithubActivity username="RizkyAlfiansyah" />
-            </div>
+            <GithubActivity username="RizkyAlfiansyah" />
           </div>
         </section>
 

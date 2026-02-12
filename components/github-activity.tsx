@@ -78,17 +78,17 @@ export function GithubActivity({ username }: GithubActivityProps) {
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 *:border-none">
       {profile ? (
-        <div className="rounded-2xl border border-line-light bg-white/10 px-4 py-3 text-xs font-semibold text-ink-light dark:border-line-dark dark:bg-black/20 dark:text-ink-dark">
+        <div className="rounded-2xl">
           <div className="flex flex-wrap gap-2">
-            <span className="rounded-full border border-line-light px-3 py-1 dark:border-line-dark">
+            <span className="rounded-full border border-base-dark px-3 py-1 dark:border-white">
               Repositories: {profile.publicRepos}
             </span>
-            <span className="rounded-full border border-line-light px-3 py-1 dark:border-line-dark">
+            <span className="rounded-full border border-base-dark px-3 py-1 dark:border-white">
               Followers: {profile.followers}
             </span>
-            <span className="rounded-full border border-line-light px-3 py-1 dark:border-line-dark">
+            <span className="rounded-full border border-base-dark px-3 py-1 dark:border-white">
               Following: {profile.following}
             </span>
           </div>
@@ -96,20 +96,17 @@ export function GithubActivity({ username }: GithubActivityProps) {
       ) : null}
 
       {svgStatus === "error" || fallback ? (
-        <div className="rounded-2xl border border-line-light bg-white/5 p-3 dark:border-line-dark dark:bg-black/10">
+        <div className="rounded-2xl border border-line-light dark:border-line-dark">
           <img
             src={`https://ghchart.rshah.org/${username}`}
             alt="GitHub contributions chart"
             className="w-full max-w-3xl rounded-xl"
             loading="lazy"
           />
-          <p className="mt-2 text-xs text-muted-light dark:text-muted-dark">
-            Showing fallback chart (ghchart.rshah.org) because the contributions SVG could not be fetched.
-          </p>
         </div>
       ) : svg ? (
         <div
-          className="overflow-auto rounded-2xl border border-line-light bg-white/5 p-3 dark:border-line-dark dark:bg-black/10"
+          className="overflow-auto rounded-2xl border border-line-light bg-white/5 dark:border-line-dark"
           dangerouslySetInnerHTML={{ __html: svg }}
         />
       ) : (
