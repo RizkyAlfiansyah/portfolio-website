@@ -3,13 +3,13 @@ import { BlurFade } from "@/components/magicui/blur-fade";
 import { AnimatedThemeToggle } from "@/components/magicui/animated-theme-toggle";
 import { IconCloudTheme } from "@/components/icon-cloud-theme";
 import { MorphingText } from "@/components/magicui/morphing-text";
-import { MorphingImage } from "@/components/magicui/morphing-image";
 import { Particles } from "@/components/magicui/particles";
 import { ShineBorder } from "@/components/magicui/shine-border";
 import { Spotlight } from "@/components/magicui/spotlight";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
 import { SkillIcon } from "@/components/skill-icon";
 import { GithubActivity } from "@/components/github-activity";
+import Lanyard from "@/components/lanyard";
 import {
   IconMail,
   IconMapPin,
@@ -300,7 +300,7 @@ export default function HomePage() {
           </div>
         </header>
 
-        <section className="grid md:gap-10 gap-6 max-md:flex flex-col-reverse md:grid-cols-[1.1fr_0.9fr]">
+        <section className="grid md:gap-10 gap-6 max-md:flex flex-col-reverse md:grid-cols-[1.1fr_0.9fr] overflow-visible">
           <BlurFade>
             <div className="space-y-6">
               <h2 className="font-display text-3xl font-semibold leading-tight md:text-4xl">
@@ -330,17 +330,14 @@ export default function HomePage() {
             </div>
           </BlurFade>
 
-          <BlurFade delay={120}>
-            <div className="relative max-lg:max-w-sm mx-auto">
+          {/* <BlurFade delay={120}>
+            <div className="relative mx-auto w-full max-w-sm">
               <div className="absolute -inset-6 rounded-[32px] bg-gradient-to-br from-accent-light/15 via-transparent to-accent-light/10 blur-3xl dark:from-accent-dark/10 dark:to-accent-dark/10" />
-              <div className="relative overflow-hidden aspect-[520/640] rounded-[32px] shadow-glow">
-                <MorphingImage
-                  sources={["/hero-portraits.png", "/hero-portraits-illustrations.png"]}
-                  alt="Rizky Alfiansyah portrait"
-                />
+              <div className="relative overflow-hidden rounded-[32px] shadow-glow">
               </div>
             </div>
-          </BlurFade>
+          </BlurFade> */}
+          <Lanyard position={[0, 0, 18]} className="w-full h-[500px] -mt-10" />
         </section>
 
         <section className="section-grid" id="experience">
