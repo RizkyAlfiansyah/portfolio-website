@@ -20,7 +20,6 @@ const cardGLB = '/lanyard/card.glb';
 const lanyard = '/lanyard/lanyard.png';
 
 interface LanyardProps {
-  position?: [number, number, number];
   gravity?: [number, number, number];
   fov?: number;
   transparent?: boolean;
@@ -29,7 +28,6 @@ interface LanyardProps {
 }
 
 export default function Lanyard({
-  position = [0, 0, 30],
   gravity = [0, -40, 0],
   fov = 20,
   transparent = true,
@@ -37,6 +35,7 @@ export default function Lanyard({
   overflowPadding = 96
 }: LanyardProps) {
   const [isMobile, setIsMobile] = useState<boolean>(() => typeof window !== 'undefined' && window.innerWidth < 768);
+
 
   useEffect(() => {
     const handleResize = (): void => setIsMobile(window.innerWidth < 768);
@@ -48,7 +47,7 @@ export default function Lanyard({
     <div className={`relative z-0 w-full overflow-visible ${className}`}>
       <div className="absolute overflow-visible" style={{ inset: -overflowPadding }}>
         <Canvas
-          camera={{ position, fov }}
+          camera={{ position: isMobile ? [0, 0, 30] : [0, 0, 18], fov }}
           dpr={[1, isMobile ? 1.5 : 2]}
           gl={{ alpha: transparent }}
           onCreated={({ gl }) => gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1)}
@@ -100,7 +99,7 @@ interface BandProps {
 }
 
 function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }: BandProps) {
-  const CARD_SCALE = 4.2;
+  const CARD_SCALE = 3.2;
   const CARD_COLLIDER_HALF_WIDTH = 1.45;
   const CARD_COLLIDER_HALF_HEIGHT = 2.03;
   const CARD_JOINT_Y = 2.68;
@@ -243,7 +242,7 @@ function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }: BandProps) {
         {/* @ts-ignore */}
         <meshLineMaterial
           color="white"
-          depthTest={false}
+          depthTest={true}
           resolution={isMobile ? [1000, 2000] : [1000, 1000]}
           useMap
           map={texture}

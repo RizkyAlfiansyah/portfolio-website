@@ -337,7 +337,7 @@ export default function HomePage() {
               </div>
             </div>
           </BlurFade> */}
-          <Lanyard position={[0, 0, 18]} className="w-full h-[500px] -mt-10" />
+          <Lanyard className="w-full h-[500px] md:-mt-64 mt-0" />
         </section>
 
         <section className="section-grid" id="experience">
