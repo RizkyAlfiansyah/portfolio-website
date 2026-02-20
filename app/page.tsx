@@ -27,10 +27,10 @@ const contact = {
 };
 
 const socialLinks = [
-  { name: "Instagram", icon: IconInstagram, href: "#" },
-  { name: "Threads", icon: IconThreads, href: "#" },
-  { name: "LinkedIn", icon: IconLinkedInSimple, href: "#" },
-  { name: "Facebook", icon: IconFacebook, href: "#" }
+  { name: "Instagram", icon: IconInstagram, href: "https://www.instagram.com/rizkyalfnsyah/" },
+  { name: "Threads", icon: IconThreads, href: "https://www.threads.com/@rizkyalfnsyah" },
+  { name: "LinkedIn", icon: IconLinkedInSimple, href: "https://www.linkedin.com/in/rizkyalfnsyah/" },
+  { name: "Facebook", icon: IconFacebook, href: "https://www.facebook.com/rizkyalfnsyah/" }
 ];
 
 const experiences = [
