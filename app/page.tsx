@@ -488,14 +488,9 @@ export default function HomePage() {
             <h3 className="mt-3 font-display text-2xl font-semibold">Selected Work</h3>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
-            {projects.map((project, idx) => (
-              <BlurFade key={project.name} delay={idx * 60}>
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="card block h-full space-y-3 transition hover:-translate-y-1 hover:shadow-glow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-light dark:focus-visible:outline-accent-dark"
-                >
+            {projects.map((project, idx) => {
+              const cardContent = (
+                <>
                   <div className="overflow-hidden rounded-xl border border-line-light dark:border-line-dark">
                     <Image
                       src={project.image}
@@ -515,11 +510,56 @@ export default function HomePage() {
                       <p className="text-sm text-muted-light dark:text-muted-dark">{project.description}</p>
                     </div>
                   </div>
-                </a>
-              </BlurFade>
-            ))}
+                </>
+              );
+
+              return (
+                <BlurFade key={project.name} delay={idx * 60}>
+                  {project.is_private ? (
+                    <a
+                      href="#private-project-modal"
+                      className="card block h-full space-y-3 transition hover:-translate-y-1 hover:shadow-glow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-light dark:focus-visible:outline-accent-dark"
+                    >
+                      {cardContent}
+                    </a>
+                  ) : (
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="card block h-full space-y-3 transition hover:-translate-y-1 hover:shadow-glow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-light dark:focus-visible:outline-accent-dark"
+                    >
+                      {cardContent}
+                    </a>
+                  )}
+                </BlurFade>
+              );
+            })}
           </div>
         </section>
+
+        <div
+          id="private-project-modal"
+          className="pointer-events-none fixed inset-0 z-50 opacity-0 transition-opacity duration-200 [&:target]:pointer-events-auto [&:target]:opacity-100"
+        >
+          <a href="#projects" aria-label="Close private project modal" className="absolute inset-0 block bg-black/45" />
+          <div className="relative z-10 flex min-h-full items-center justify-center p-4">
+            <div className="w-full max-w-md rounded-2xl border border-line-light bg-white p-6 shadow-glow dark:border-line-dark dark:bg-[#101312]">
+              <p className="text-xs uppercase tracking-[0.3em] text-muted-light dark:text-muted-dark">Private Project</p>
+              <h4 className="mt-3 font-display text-xl font-semibold">Website URL Unavailable</h4>
+              <p className="mt-2 text-sm text-muted-light dark:text-muted-dark">
+                This project is under a confidentiality agreement, so the live URL and access details cannot be
+                shared publicly. If you&apos;d like to review the work, I can provide a private walkthrough, screenshots,
+                and technical details on request.
+              </p>
+              <div className="mt-5">
+                <a href="#projects" className="link">
+                  Close
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <section className="section-grid" id="github">
           <div>
