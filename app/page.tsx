@@ -123,53 +123,58 @@ const education = [
 const projects = [
   {
     name: "ERP Inventory System",
+    type: "Web Application",
+    is_private: true,
     company: "Accelego Kreasi Digital",
     description: "Built ERP inventory flows with responsive UI and data management dashboards.",
-    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80",
+    image: "/portfolio/ysl_inventory_accelego.png",
     url: "#"
   },
   {
     name: "Real Estate Platform",
+    type: "Web Application",
+    is_private: false,
     company: "Airestate",
     description: "Full-stack property search experience integrating maps, listings, and booking flows.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80",
-    url: "#"
+    image: "/portfolio/airestate.png",
+    url: "https://airestate.io"
   },
   {
     name: "Personal Portfolio",
+    type: "Web Application",
+    is_private: false,
     company: "Self",
     description: "Showcase site highlighting selected work and contact details.",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80",
+    image: "/portfolio/portfolio.png",
     url: "#"
   },
   {
-    name: "AI Content Dashboard",
-    company: "Palm Code",
-    description: "Analytics dashboard for AI-powered content performance with charting and filters.",
-    image: "https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=900&q=80",
-    url: "#"
-  },
-  {
-    name: "Learning Management",
+    name: "Attendance Management System",
+    type: "Mobile Application",
+    is_private: true,
     company: "Dinas Pendidikan",
-    description: "Learning portal with progress tracking and responsive course layouts.",
-    image: "https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&w=900&q=80",
+    description: "Attendance management system with responsive UI and data management dashboards.",
+    image: "/portfolio/attendance.jpg",
     url: "#"
   },
   {
-    name: "Marketing Landing Suite",
+    name: "Actehair",
+    type: "Web Application",
+    is_private: false,
     company: "Freelance",
-    description: "Collection of optimized landing pages with A/B test variants and CMS integration.",
-    image: "https://images.unsplash.com/photo-1523475472560-7f55c0c154b4?auto=format&fit=crop&w=900&q=80",
+    description: "Landing page for a hair serum with responsive UI and shopping product.",
+    image: "/portfolio/actehair.png",
+    url: "https://actehair.vercel.app"
+  },
+  {
+    name: "E-Procurement System",
+    type: "Web Application",
+    is_private: true,
+    company: "Freelance",
+    description: "E-procurement system with responsive UI and data management dashboards.",
+    image: "/portfolio/e_procurement_kangean.png",
     url: "#"
   }
-];
-
-const workImages = [
-  "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80"
 ];
 
 const slugs = [
