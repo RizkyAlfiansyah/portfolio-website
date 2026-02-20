@@ -280,6 +280,8 @@ const typingTexts = [
 const nameMorphs = ["Rizky Alfiansyah (Ren)", "Frontend Developer"];
 
 export default function HomePage() {
+  const resumeUrl = process.env.NEXT_PUBLIC_RESUME_URL || "#";
+
   return (
     <main className="relative min-h-screen overflow-x-hidden px-6 pb-24 pt-10 lg:px-16">
       <Particles className="dark:opacity-40" />
@@ -325,7 +327,7 @@ export default function HomePage() {
               <div className="flex flex-wrap gap-3">
                 <a
                   className="link"
-                  href="/cv-rizky-alfiansyah.pdf"
+                  href={resumeUrl}
                   target="_blank"
                   rel="noreferrer"
                 >
