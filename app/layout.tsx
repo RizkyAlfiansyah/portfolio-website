@@ -14,9 +14,52 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap"
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://rizkyalfiansyah.com";
+
 export const metadata: Metadata = {
-  title: "Rizky Alfiansyah | Frontend Developer",
-  description: "Portfolio of Rizky Alfiansyah - frontend developer specializing in responsive web applications."
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Rizky Alfiansyah | Frontend Developer",
+    template: "%s | Rizky Alfiansyah"
+  },
+  description:
+    "Portfolio of Rizky Alfiansyah (Ren) — frontend developer specializing in React, Next.js, and TypeScript. Based in Bali, Indonesia. Available for remote collaborations.",
+  keywords: [
+    "Rizky Alfiansyah",
+    "Frontend Developer",
+    "React Developer",
+    "Next.js Developer",
+    "TypeScript",
+    "Web Developer Bali",
+    "Remote Frontend Developer",
+    "JavaScript Developer"
+  ],
+  authors: [{ name: "Rizky Alfiansyah", url: siteUrl }],
+  creator: "Rizky Alfiansyah",
+  openGraph: {
+    type: "website",
+    url: siteUrl,
+    title: "Rizky Alfiansyah | Frontend Developer",
+    description:
+      "Portfolio of Rizky Alfiansyah (Ren) — frontend developer specializing in React, Next.js, and TypeScript. Based in Bali, Indonesia.",
+    siteName: "Rizky Alfiansyah",
+    images: [{ url: "/opengraph-image.png", width: 1200, height: 630, alt: "Rizky Alfiansyah — Frontend Developer" }]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rizky Alfiansyah | Frontend Developer",
+    description:
+      "Portfolio of Rizky Alfiansyah (Ren) — frontend developer specializing in React, Next.js, and TypeScript.",
+    images: ["/opengraph-image.png"]
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 }
+  },
+  alternates: {
+    canonical: siteUrl
+  }
 };
 
 export default function RootLayout({
